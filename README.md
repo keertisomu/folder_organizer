@@ -11,22 +11,22 @@ This approach/python program does not help you completely in organizing your fol
 Specifications:
 ----------------
 Extensions that the folder organizer can currently handle.
-    "pdf"
-    "exe"
-    "msi"
-    "txt"
-    "zip"
-    "log"
-Sample output after running the script.
-    input  => C:\Users\<user>\Downloads
-    output => below directories will be created within the above folder and places the files inside them based on their extenions.
-    "pdf_files"
-     - contains all pdf files 
-    "exe_files"
-     - contains all *.exe files.
+    "pdf" <br />
+    "exe" <br />
+    "msi" <br />
+    "txt" <br />
+    "zip" <br />
+    "log" <br />
+Sample output after running the script.<br />
+    input  => C:\Users\<user>\Downloads <br />
+    output => below directories will be created within the above folder and places the files inside them based on their extenions. <br />
+    "pdf_files" <br />
+     - contains all pdf files <br />
+    "exe_files" <br />
+     - contains all *.exe files. <br />
     .....
 
 Coming up soon in next version (0.2):
 ------------------------------------
- - allow to add more extensions via a json file.
- - add logging to understand better the file categorization steps.
+ - allow to add more extensions via a json file. <br />
+ - add logging to understand better the file categorization steps. <br />
