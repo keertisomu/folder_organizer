@@ -1,0 +1,17 @@
+{
+    "extensions": [
+        "pdf",
+        "exe",
+        "msi",
+        "txt",
+        "log",
+        "zip",
+        "crdownload",
+        "png",
+        "jpg",
+        "vsix",
+        "docx",
+        "csv",
+        "iso"        
+    ]
+}
