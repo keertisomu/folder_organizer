@@ -11,7 +11,15 @@
         "jpg",
         "vsix",
         "docx",
+        "pptx",
+        "xlsx",
+        "diagcab",
+        "emz",
+        "htm",
         "csv",
-        "iso"        
+        "iso",
+        "aspx",
+        "ps1",
+        "rdp"
     ]
 }
