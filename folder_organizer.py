@@ -2,13 +2,18 @@ import os
 import sys
 from shutil import copyfile
 import extensions_loader
+import logging
+
+#config
+logging.basicConfig(filename='folder_organizer.log',level=logging.DEBUG,
+format='%(asctime)s:%(levelname)s:%(message)s')
 
 #get directory names
 def get_directories_filenames():
     path = sys.argv[1]
-    print(path)   
+    logging.info(path)   
     dir_list = os.listdir(path)
-    print(dir_list)
+    logging.info(dir_list)
     return dir_list
 
 #sort through list to categorize items based on their extensions.
@@ -17,7 +22,7 @@ def categorize_items_based_on_ext(data):
     path = sys.argv[1]
     dir_list = get_directories_filenames()
     for ext in extensions:
-        print("Working on: " + ext + "items...")
+        logging.info("Working on: " + ext + "items...")
         move_files(ext , dir_list , path) 
 
 #move files from src to dest path.
@@ -39,13 +44,13 @@ def move_files(extension , dir_list , path):
     for item in file_list:
         source_file_path = os.path.join(path , item)
         dest_file_path = os.path.join(dest_path_dir, item)
-        print("dest path:" + dest_file_path)   
-        print("source path:" + source_file_path) 
+        logging.info("dest path:" + dest_file_path)   
+        logging.info("source path:" + source_file_path) 
         if not os.path.isfile(dest_file_path):
             copyfile(source_file_path , dest_file_path)
-            print("file copied" + item)
+            logging.info("file copied" + item)
             os.remove(source_file_path)
-            print("file removed from src folder: " + item)
+            logging.info("file removed from src folder: " + item)
         
 
         
