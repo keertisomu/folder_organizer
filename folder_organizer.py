@@ -7,23 +7,23 @@ import logging
 #config
 logging.basicConfig(filename='folder_organizer.log',level=logging.DEBUG,
 format='%(asctime)s:%(levelname)s:%(message)s')
+#dir_to_clean
+
 
 #get directory names
 def get_directories_filenames():
-    path = sys.argv[1]
-    logging.info(path)   
-    dir_list = os.listdir(path)
+    logging.info(dir_to_clean)   
+    dir_list = os.listdir(dir_to_clean)
     logging.info(dir_list)
     return dir_list
 
 #sort through list to categorize items based on their extensions.
 def categorize_items_based_on_ext(data):
-    extensions = data["extensions"]
-    path = sys.argv[1]
+    extensions = data["extensions"]    
     dir_list = get_directories_filenames()
     for ext in extensions:
         logging.info("Working on: " + ext + "items...")
-        move_files(ext , dir_list , path) 
+        move_files(ext , dir_list , dir_to_clean) 
 
 #move files from src to dest path.
 def move_files(extension , dir_list , path):
@@ -57,6 +57,10 @@ def move_files(extension , dir_list , path):
 
 #main function
 if __name__ == "__main__":
+    if __debug__:
+        dir_to_clean=r"C:\Users\Keerti.Somasundaram\Downloads"
+    else:
+        dir_to_clean = sys.argv[1]
     data = extensions_loader.load_ext()   
     categorize_items_based_on_ext(data)
 
